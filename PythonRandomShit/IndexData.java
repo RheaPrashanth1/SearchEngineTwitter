@@ -43,10 +43,10 @@ public class IndexData {
       
        BufferedReader buffread = null;
         try {
-            File file = new File("/Users/rheaprashanth/Documents/VScode/Angular-Spring-Java/PythonRandomShit/" + "tweet" + filenum +".txt");
+            File file = new File("/Users/rheaprashanth/Documents/VScode/SearchEngineTwitter/PythonRandomShit/" + "tweet" + filenum +".txt");
             buffread = new BufferedReader(new FileReader(file));
-            while(filenum < 20){
-                file = new File("/Users/rheaprashanth/Documents/VScode/Angular-Spring-Java/PythonRandomShit/" + "tweet" + filenum +".txt");
+            while(filenum < 1){
+                file = new File("/Users/rheaprashanth/Documents/VScode/SearchEngineTwitter/PythonRandomShit/" + "tweet" + filenum +".txt");
                 buffread = new BufferedReader(new FileReader(file));
                 String l;
                 while ((l = buffread.readLine()) != null) {
@@ -112,7 +112,7 @@ public class IndexData {
         Analyzer analyzer = new StandardAnalyzer();
        
        IndexWriterConfig indexConfig = new IndexWriterConfig(analyzer);
-      Path p = Paths.get("/Users/rheaprashanth/Documents/VScode/Angular-Spring-Java/PythonRandomShit/Index");
+      Path p = Paths.get("/Users/rheaprashanth/Documents/VScode/SearchEngineTwitter/PythonRandomShit/Index");
       //System.out.println("before exception");
       IndexWriter writer = new IndexWriter(FSDirectory.open(p), indexConfig); 
         Document d = new Document();
@@ -150,7 +150,7 @@ public class IndexData {
 
     public final static String[] searchTheIndex(String queryResult)  throws Exception, IOException{
         Analyzer a = new StandardAnalyzer();
-        Path pg = Paths.get("/Users/rheaprashanth/Documents/VScode/Angular-Spring-Java/PythonRandomShit/Index");
+        Path pg = Paths.get("/Users/rheaprashanth/Documents/VScode/SearchEngineTwitter/PythonRandomShit/Index");
         DirectoryReader ireader = DirectoryReader.open(FSDirectory.open(pg));
         IndexSearcher searcher = new IndexSearcher(ireader); //creates searcher 
    
@@ -168,7 +168,7 @@ public class IndexData {
         for(int i =0; i < results.length ; ++i) {
            // System.out.println("in for loop");
             Document hitDoc = searcher.doc(results[i].doc);
-            String retString = ("Tweet result number " + (i + 1)  + ": @:" + hitDoc.get("screenName") + " said: "  + hitDoc.get("text")  + " - Tweeted on: " + hitDoc.get("date")  + ". Tweet score is: " + results[i].score + ".\n").replace("\n", "") + "<br>"  ;
+            String retString = ("Tweet result number " + (i + 1)  + ": @:" + hitDoc.get("screenName") + " said: "  + hitDoc.get("text")  + " - Tweeted on: " + hitDoc.get("date")  + ". Tweet score is: " + results[i].score + ".\n").replace("\n", "");
            // Gson gson = new Gson();
          //   json = gson.toJson(obj); 
       

@@ -57,7 +57,7 @@ public class IndexData {
      }
     
       Analyzer a = new StandardAnalyzer();
-        Path pg = Paths.get("/Users/rheaprashanth/Documents/VScode/Angular-Spring-Java/PythonRandomShit/Index");
+        Path pg = Paths.get("/Users/rheaprashanth/Documents/VScode/SearchEngineTwitter/PythonRandomShit/Index");
         DirectoryReader ireader = DirectoryReader.open(FSDirectory.open(pg));
         IndexSearcher searcher = new IndexSearcher(ireader); //creates searcher 
        
