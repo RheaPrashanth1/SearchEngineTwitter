@@ -45,7 +45,7 @@ public class IndexData {
         try {
             File file = new File("/Users/rheaprashanth/Documents/VScode/SearchEngineTwitter/PythonRandomShit/" + "tweet" + filenum +".txt");
             buffread = new BufferedReader(new FileReader(file));
-            while(filenum < 1){
+            while(filenum < 200){
                 file = new File("/Users/rheaprashanth/Documents/VScode/SearchEngineTwitter/PythonRandomShit/" + "tweet" + filenum +".txt");
                 buffread = new BufferedReader(new FileReader(file));
                 String l;
